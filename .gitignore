@@ -1,0 +1,23 @@
+# Diretórios de build
+/target/
+
+# Arquivos de configuração do Eclipse
+.classpath
+.project
+.settings/
+
+# Arquivos de configuração do IntelliJ IDEA
+.idea/
+*.iml
+
+# Arquivos de log e temporários
+*.log
+*.tmp
+*.swp
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Outros
+*.bak 
