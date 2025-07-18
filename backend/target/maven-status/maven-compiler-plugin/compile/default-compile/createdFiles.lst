@@ -1,0 +1,7 @@
+br\gov\conectasos\model\Comentario.class
+br\gov\conectasos\model\Anexo.class
+br\gov\conectasos\model\Atendimento.class
+br\gov\conectasos\model\Ocorrencia.class
+br\gov\conectasos\model\Notificacao.class
+br\gov\conectasos\model\OrgaoPublico.class
+br\gov\conectasos\model\Usuario.class

@@ -1,0 +1,248 @@
+/* Reset básico */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body, html { height: 100%; font-family: 'Segoe UI', Arial, sans-serif; }
+
+.landing-bg {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.landing-container {
+    background: rgba(255,255,255,0.97);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(44,83,100,0.18);
+    padding: 48px 32px 32px 32px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    animation: fadeIn 1s;
+}
+@keyframes fadeIn { from { opacity: 0; transform: translateY(40px);} to { opacity: 1; transform: none; } }
+header h1 {
+    font-size: 2.5rem;
+    color: #2c5364;
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+header p {
+    color: #0f2027;
+    font-size: 1.1rem;
+    margin-bottom: 32px;
+}
+.btn-main, .btn-secondary {
+    display: block;
+    width: 100%;
+    padding: 14px 0;
+    margin: 12px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+}
+.btn-main {
+    background: linear-gradient(90deg, #11998e 0%, #38ef7d 100%);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(56,239,125,0.08);
+}
+.btn-main:hover {
+    background: linear-gradient(90deg, #38ef7d 0%, #11998e 100%);
+    color: #fff;
+}
+.btn-secondary {
+    background: #2c5364;
+    color: #fff;
+    border: 1px solid #11998e;
+}
+.btn-secondary:hover {
+    background: #11998e;
+    color: #fff;
+}
+footer {
+    margin-top: 32px;
+    color: #2c5364;
+    font-size: 0.95rem;
+    opacity: 0.7;
+}
+/* Formulários */
+.form-main {
+    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.form-main label {
+    text-align: left;
+    color: #2c5364;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+.form-main input, .form-main select {
+    padding: 10px;
+    border: 1px solid #b2bec3;
+    border-radius: 6px;
+    font-size: 1rem;
+    background: #f7fafd;
+    transition: border 0.2s;
+}
+.form-main input:focus, .form-main select:focus {
+    border: 1.5px solid #11998e;
+    outline: none;
+}
+.form-main button {
+    margin-top: 10px;
+}
+@media (max-width: 500px) {
+    .landing-container { padding: 24px 8px; }
+    header h1 { font-size: 2rem; }
+    .form-main input, .form-main select { font-size: 0.98rem; }
+} 
+
+/* Dashboard */
+.dashboard-container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(44,83,100,0.10);
+    padding: 32px 24px;
+}
+.dashboard-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+.dashboard-header nav {
+    display: flex;
+    gap: 10px;
+}
+.dashboard-section {
+    margin-bottom: 32px;
+}
+.dashboard-section h2 {
+    color: #11998e;
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+}
+#ocorrencias-list, #notificacoes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.card-ocorrencia, .card-notificacao {
+    background: #f7fafd;
+    border-radius: 8px;
+    padding: 16px 18px;
+    box-shadow: 0 2px 8px rgba(44,83,100,0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.card-ocorrencia .status {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #fff;
+    background: #11998e;
+    border-radius: 4px;
+    padding: 2px 10px;
+    display: inline-block;
+}
+.card-ocorrencia .status.Em\ andamento { background: #f9ca24; color: #2c5364; }
+.card-ocorrencia .status.Finalizada { background: #38ef7d; color: #2c5364; }
+.card-notificacao.lida { opacity: 0.6; }
+@media (max-width: 900px) {
+    .dashboard-container { padding: 16px 2vw; }
+}
+@media (max-width: 600px) {
+    .dashboard-header { flex-direction: column; align-items: flex-start; }
+    .dashboard-container { margin: 10px 0; }
+} 
+
+/* Painel Órgão Público */
+.filtros-admin {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+}
+.filtros-admin label {
+    font-weight: 500;
+    color: #2c5364;
+}
+.filtros-admin select {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #b2bec3;
+    background: #f7fafd;
+}
+#admin-ocorrencias-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.card-admin-ocorrencia {
+    background: #f7fafd;
+    border-radius: 8px;
+    padding: 16px 18px;
+    box-shadow: 0 2px 8px rgba(44,83,100,0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.card-admin-ocorrencia .status {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #fff;
+    background: #11998e;
+    border-radius: 4px;
+    padding: 2px 10px;
+    display: inline-block;
+}
+.card-admin-ocorrencia .status.Em\ andamento { background: #f9ca24; color: #2c5364; }
+.card-admin-ocorrencia .status.Finalizada { background: #38ef7d; color: #2c5364; }
+.card-admin-ocorrencia .acoes {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+.card-admin-ocorrencia .btn-aceitar {
+    background: #11998e;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.card-admin-ocorrencia .btn-aceitar:hover { background: #38ef7d; color: #2c5364; }
+.card-admin-ocorrencia .btn-recusar {
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.card-admin-ocorrencia .btn-recusar:hover { background: #c0392b; }
+.card-admin-ocorrencia .btn-delegar {
+    background: #f9ca24;
+    color: #2c5364;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.card-admin-ocorrencia .btn-delegar:hover { background: #f6e58d; } 
